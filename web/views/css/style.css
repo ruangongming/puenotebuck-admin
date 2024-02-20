@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+
+  background: #242526;
+}
+
+nav .wrapper {
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#news-section {
+  position: absolute;
+  top: 200px;
+  /* Điều chỉnh giá trị này để thích nghi với vị trí mong muốn */
+  margin-top: 50px; /* Điều chỉnh giá trị này để thay đổi khoảng cách giữa nav và phần thông báo */
+  text-align: left; /* Căn giữa văn bản */
+  padding-left: 50px; /* Tạo khoảng trắng bên trái */
+}
+
+/* Đảm bảo form chat trải dài */
+#chatForm {
+  flex-grow: 1;
+  display: flex; /* Sử dụng flexbox để các phần tử con trở thành flex items */
+}
+
+/* Định dạng input và button trong form */
+#user-message {
+  flex-grow: 1; /* Input chiếm hết không gian còn lại */
+  margin-right: 10px; /* Đặt khoảng cách giữa input và nút "Send" */
+}
+
+/* Định dạng nút "Send" */
+#chatForm button {
+  margin: 0; /* Loại bỏ margin của nút "Send" */
+}
+
+/* Định dạng nút "Send" */
+#sendButton {
+  background-color: transparent; /* Loại bỏ màu nền của nút */
+  border: none; /* Loại bỏ đường viền */
+  padding: 0; /* Loại bỏ padding để giữ lại kích thước tự nhiên của biểu tượng */
+  cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào nút */
+}
+
+#sendButton:hover {
+  background-color: transparent; /* Loại bỏ màu nền khi di chuột vào nút */
+}
+
+/* Định dạng icon gửi bên trong nút */
+#sendButton i {
+  color: #3498db; /* Màu chữ của biểu tượng */
+  font-size: 20px; /* Kích thước của biểu tượng */
+}
+
+#sendButton i:hover {
+  color: #2980b9; /* Màu chữ khi di chuột vào biểu tượng */
+}
+
+/* Định dạng phần tiêu đề chat */
+.chat-header {
+  display: flex; /* Sử dụng flexbox để căn giữa theo chiều ngang */
+  justify-content: space-between; /* Căn cách giữa các phần tử */
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Định dạng thông tin tư vấn viên */
+.advisor-info {
+  font-weight: bold; /* Độ đậm của chữ */
+}
+
+/* Định dạng nút fullscreen */
+.fullscreen-button {
+  background-color: transparent; /* Loại bỏ màu nền */
+  border: none; /* Loại bỏ đường viền */
+  cursor: pointer; /* Biểu tượng con trỏ khi di chuột vào nút */
+}
+
+.fullscreen-button i {
+  color: #3498db; /* Màu chữ của biểu tượng */
+  font-size: 20px; /* Kích thước của biểu tượng */
+}
+
+.fullscreen-button:hover i {
+  color: #2980b9; /* Màu chữ khi di chuột vào biểu tượng */
+}
+
+
+
+.wrapper .logo a {
+  color: #f2f2f2;
+  font-size: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wrapper .nav-links {
+  display: inline-flex;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background: #3A3B3C;
+}
+
+.nav-links .mobile-item {
+  display: none;
+}
+
+.nav-links .drop-menu {
+  position: absolute;
+  background: #242526;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box {
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.drop-menu li a {
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+}
+
+.mega-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mega-box .content {
+  background: #242526;
+  padding: 25px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mega-box .content .row {
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+
+.content .row img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content .row header {
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.content .row .mega-links {
+  margin-left: -40px;
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.row .mega-links li {
+  padding: 0 20px;
+}
+
+.row .mega-links li a {
+  padding: 0px;
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 17px;
+  display: block;
+}
+
+.row .mega-links li a:hover {
+  color: #f2f2f2;
+}
+
+.wrapper .btn {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.wrapper .btn.close-btn {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+  .wrapper .btn {
+    display: block;
+  }
+
+  .wrapper .nav-links {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #242526;
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.18);
+    transition: all 0.3s ease;
+  }
+
+  /* custom scroll bar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #242526;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3A3B3C;
+  }
+
+  #menu-btn:checked~.nav-links {
+    left: 0%;
+  }
+
+  #menu-btn:checked~.btn.menu-btn {
+    display: none;
+  }
+
+  #close-btn:checked~.btn.menu-btn {
+    display: block;
+  }
+
+  .nav-links li {
+    margin: 15px 10px;
+  }
+
+  .nav-links li a {
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+
+  .nav-links .drop-menu {
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+
+  #showDrop:checked~.drop-menu,
+  #showMega:checked~.mega-box {
+    max-height: 100%;
+  }
+
+  .nav-links .desktop-item {
+    display: none;
+  }
+
+  .nav-links .mobile-item {
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .nav-links .mobile-item:hover {
+    background: #3A3B3C;
+  }
+
+  .drop-menu li {
+    margin: 0;
+  }
+
+  .drop-menu li a {
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  .mega-box {
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .mega-box .content {
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+
+  .mega-box .content .row {
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2) {
+    border-top: 0px;
+  }
+
+  .content .row .mega-links {
+    border-left: 0px;
+    padding-left: 15px;
+  }
+
+  .row .mega-links li {
+    margin: 0;
+  }
+
+  .content .row header {
+    font-size: 19px;
+  }
+}
+
+nav input {
+  display: none;
+}
+
+.body-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+
+.body-text div {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+
+/* CSS for chat */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.chat-input {
+  background-color: #F2F2F2;
+  border: none;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 40px;
+  border-radius: 20px;
+  flex-grow: 1;
+  margin-left: 8px;
+}
+
+.chat-input::placeholder {
+  color: #A1A1A1;
+}
+
+.chat-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.clear-button,
+.fullscreen-button,
+.toggle-chat {
+  color: #A1A1A1;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.clear-button:focus,
+.fullscreen-button:focus,
+.toggle-chat:focus {
+  outline: none;
+}
+
+.chat-container {
+  max-width: 400px;
+  width: 450px;
+  height: 600px;
+  display: none;
+  /* Initially hidden */
+  flex-direction: column;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 999;
+  margin: 0 auto;
+}
+
+.toggle-chat {
+  display: block;
+  /* Initially visible */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #2563EB;
+  /* Blue 600 */
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.toggle-chat:hover {
+  background-color: #1D4ED8;
+  /* Blue 700 */
+}
+
+.toggle-chat i {
+  font-size: 24px;
+}
+
+@media (max-width: 640px) {
+  .chat-container {
+    width: 90%;
+    height: 80%;
+    bottom: 10px;
+    right: 5%;
+  }
+
+  .toggle-chat {
+    width: 50px;
+    height: 50px;
+  }
+
+  .toggle-chat i {
+    font-size: 20px;
+  }
+
+  .message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+
+  .align-right {
+    float: right;
+    background-color: #428
+  }
+
+  .user-message {
+    background-color: #4285f4;
+    color: #ffffff;
+    text-align: right;
+  }
+
+  .bot-message {
+    background-color: #299ba3;
+    color: #333333;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
+  /* Hiển thị tin nhắn từ Bot ở bên trái */
+  .bot-message .text-blue-600 {
+    float: left;
+  }
+
+  /* Hiển thị tin nhắn từ người dùng ở bên phải */
+  .user-message .text-blue-600 {
+    float: right;
+  }
+}
+
+/* CSS cho tin nhắn người dùng */
+.text-gray-600 {
+  background-color: #e0e0e0;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  float: right;
+  /* Đưa tin nhắn người dùng về phía bên phải */
+  clear: both;
+  /* Đảm bảo không có tin nhắn nào kề cận bên phải */
+}
+
+/* CSS cho tin nhắn của bot */
+.text-white-600 {
+  background-color: #3498db;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  box-shadow: blue;
+  float: left;
+  /* Đưa tin nhắn của bot về phía bên trái */
+  clear: both;
+  /* Đảm bảo không có tin nhắn nào kề cận bên trái */
+}
+
+/* tin tuc */
+/* Style for news container */
+#news-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+/* Style for each news item */
+.news-item {
+  width: 300px;
+  margin: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for news image */
+.news-item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Style for news content */
+.news-content {
+  padding: 15px;
+}
+
+/* Style for news title */
+.news-content h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for "Đọc thêm" button */
+.read-more-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.read-more-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for "Xem thêm" button */
+#load-more-button {
+  display: none;
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#load-more-button:hover {
+  background-color: #218838;
+}
+
+.news-item {
+  width: 30%;
+  /* Điều chỉnh độ rộng của mỗi bài báo */
+  margin: 1%;
+  /* Thêm khoảng cách giữa các bài báo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-item img {
+  width: 100%;
+  height: 150px;
+  /* Điều chỉnh độ cao của ảnh */
+  object-fit: cover;
+  /* Đảm bảo ảnh không bị biến dạng */
+}
+
+.news-content {
+  padding: 16px;
+}
+
+.read-more-button {
+  margin-top: 8px;
+  padding: 8px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#searchContainer {
+  position: absolute;
+  top: 100px;
+  left: 50%; /* Giữa theo chiều ngang */
+  transform: translateX(-50%); /* Dịch chuyển về trái 50% của chiều rộng của chính nó */
+  background-color: #f4f4f4; /* Màu nền */
+  border: 1px solid #ccc; /* Đường viền */
+  padding: 20px; /* Khoảng trắng xung quanh nội dung */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+}
+
+#searchInput {
+  padding: 10px;
+  width: 200px; /* Điều chỉnh chiều rộng của ô input */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Màu nền nút */
+  color: #fff; /* Màu chữ nút */
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Màu nền nút khi hover */
+}
+
+
+.flex {
+  display: flex;
+}
+
+.text-blue {
+  /* Add your text color styling here */
+  color: #007bff;
+}
+
+.zoom-button,
+.fullscreen-button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.zoom-button:hover,
+.fullscreen-button:hover {
+  color: #007bff; /* Change the color on hover if desired */
+}
+
+.chat-container {
+  transition: height 0.3s ease-in-out, min-width 0.3s ease-in-out, bottom 0.3s ease-in-out;
+  min-width: 300px; /* Set a minimum width for the chat container */
+  bottom: 0; /* Initially position at the bottom */
+}
+
+.zoomed {
+  width: 80vw; /* Adjust the width when zoomed */
+  height: 60vh; /* Adjust the height when zoomed */
+  position: fixed;
+  top: 20vh; /* Adjust the top position when zoomed */
+  left: 10%; /* Adjust the left position when zoomed */
+  z-index: 999;
+}
+
+.horizontal-expand {
+  height: auto;
+  min-width: 80vw; /* Adjust the minimum width when zoomed */
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-width: 100%; /* Allow the container to take the full width */
+  max-height: 100%; /* Allow the container to take the full height */
+}
+
+/* Optional: If you want to set a maximum width for the chat messages */
+.chat-messages-inner {
+  max-width: 400px; /* Adjust the maximum width of the chat messages */
+  margin: 0 auto; /* Center the chat messages horizontally */
+}
+
+/* Adjust the button positions */
+.zoom-button {
+  margin-right: 10px; /* Add some right margin for spacing */
+}
+
+.fullscreen-button {
+  margin-left: auto; /* Push the close button to the right */
+}

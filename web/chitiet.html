@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="$FLUTTER_BASE_HREF">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="A new Flutter project.">
+    <link rel="stylesheet" href="./views/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./views/css/global.css" type="text/css">
+  
+    <!-- Style for chat -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </link>
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="A new Flutter project.">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+  
+    <title>Notebook EPU</title>
+    <link rel="manifest" href="manifest.json">
+  
+    <script>
+      // The value below is injected by flutter build, do not touch.
+      var serviceWorkerVersion = null;
+    </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+    <script src="./views/js/main.js"></script>
+    <script src="./views/js/index.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="wrapper">
+          <div class="logo"><a href="http://127.0.0.1:8080/">NotebookEPU</a></div>
+          <input type="radio" name="slider" id="menu-btn">
+          <input type="radio" name="slider" id="close-btn">
+          <ul class="nav-links">
+            <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+            <li><a href="http://127.0.0.1:8080/">Home</a></li>
+            <li><a href="http://127.0.0.1:8080/">About</a></li>
+            <li>
+              <a href="#" class="desktop-item">Quản lý sinh
+                viên</a>
+              <input type="checkbox" id="showDrop">
+              <label for="showDrop" class="mobile-item">Quản lý sinh
+                viên</label>
+              <ul class="drop-menu">
+                <li><a href="https://epu.edu.vn/" target="_blank">EPU
+                    EDU</a></li>
+                <li><a href="https://s.net.vn/h8Ni" target="_blank">Quản
+                    lý sinh
+                    viên</a></li>
+                <li><a href="https://epu.edu.vn/thong-bao/thong-bao-2138-1.html" target="_blank">Thông
+                    báo</a></li>
+                <li><a href="https://thanhtoanhocphi.epu.edu.vn/" target="_blank">Thanh
+                    toán</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="http://127.0.0.1:8080/" class="desktop-item">EPU
+                Menu</a>
+              <input type="checkbox" id="showMega">
+              <label for="showMega" class="mobile-item">EPU Menu</label>
+              <div class="mega-box">
+                <div class="content">
+                  <div class="row">
+                    <header>Tuyển sinh</header>
+                    <ul class="mega-links">
+                      <li><a href="https://epu.edu.vn/trang/tien-si-2219.html" target="_blank">Tiến
+                          sĩ</a></li>
+                      <li><a href="https://epu.edu.vn/trang/thac-si-2225.html" target="_blank">Thạc
+                          sĩ</a></li>
+                      <li><a href="https://epu.edu.vn/trang/dai-hoc-2222.html" target="_blank">Đại
+                          học</a></li>
+                      <li><a href="#">Đào tạo hợp tác quốc
+                          tế</a></li>
+                      <li><a href="https://ctc.epu.edu.vn/" target="_blank" target="_blank">Đào
+                          tạo thường
+                          xuyên</a></li>
+                      <li><a href="https://epu.edu.vn/trang/van-bang-2-2305.html" target="_blank">Văn
+                          bằng 2</a></li>
+                      <li><a href="https://epu.edu.vn/trang/lien-thong-2306.html" target="_blank">Liên
+                          thông</a></li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <header>Đào tạo</header>
+                    <ul class="mega-links">
+                      <li><a href="https://epu.edu.vn/trang/tien-si-2219.html" target="_blank">Tiến
+                          sĩ</a></li>
+                      <li><a href="https://epu.edu.vn/trang/thac-si-2225.html" target="_blank">Thạc
+                          sĩ</a></li>
+                      <li><a href="https://epu.edu.vn/trang/dai-hoc-2222.html" target="_blank">Đại
+                          học</a></li>
+                      <li><a href="https://ctc.epu.edu.vn/" target="_blank">Đào
+                          tạo thường
+                          xuyên</a></li>
+                      <li><a href="https://epu.edu.vn/trang/van-bang-2-2305.html" target="_blank">Văn
+                          bằng 2</a></li>
+                      <li><a href="https://epu.edu.vn/trang/lien-thong-2306.html" target="_blank">Liên
+                          thông</a></li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <header>Các khoa</header>
+                    <ul class="mega-links">
+                      <li><a href="https://ee.epu.edu.vn/" target="_blank">Khoa
+                          Kỹ
+                          thuật
+                          điện</a></li>
+                      <li><a href="https://fca.epu.edu.vn/" target="_blank">Khoa
+                          Điều khiển và
+                          Tự động hóa</a></li>
+                      <li><a href="https://iem.epu.edu.vn/" target="_blank">Khoa
+                          Quản lý công
+                          nghiệp và Năng
+                          lượng</a></li>
+                      <li><a href="https://mpe.epu.edu.vn/" target="_blank">Khoa
+                          Cơ khí và Động
+                          lực</a></li>
+                      <li><a href="https://et.epu.edu.vn/" target="_blank">Khoa
+                          Công nghệ năng
+                          lượng</a></li>
+                      <li><a href="https://cntt.epu.edu.vn/" target="_blank">Khoa
+                          Công nghệ
+                          thông tin</a></li>
+                      <li><a href="https://fet.epu.edu.vn/" target="_blank">Khoa
+                          Điện tử viễn
+                          thông</a></li>
+                      <li><a href="https://fem.epu.edu.vn/" target="_blank">Khoa
+                          Kinh tế và Quản
+                          lý</a></li>
+                      <li><a href="https://ce.epu.edu.vn/" target="_blank">Khoa
+                          Xây
+                          dựng</a></li>
+                      <li><a href="https://ffl.epu.edu.vn/" target="_blank">Khoa
+                          Ngoại
+                          ngữ</a></li>
+                      <li><a href="https://ns.epu.edu.vn/" target="_blank">Khoa
+                          Khoa học tự
+                          nhiên</a></li>
+                      <li><a href="https://dps.epu.edu.vn/" target="_blank">Bộ
+                          môn
+                          Khoa học
+                          chính trị</a></li>
+                      <li><a href="https://pends.epu.edu.vn/" target="_blank">Bộ
+                          môn Giáo dục
+                          thể chất và Quốc phòng an
+                          ninh</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><a href="http://127.0.0.1:8080/">Text</a></li>
+          </ul>
+          <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+        </div>
+      </nav>
+      <br><br><br><br>
+  <div id="content"></div>
+
+  <!-- Thêm các tài nguyên JavaScript cho trang chi tiết nếu cần -->
+  <script>
+    const newsId = new URLSearchParams(window.location.search).get('id');
+    fetch(`http://localhost:4090/api/thongbaoepu/${newsId}`)
+      .then(response => response.json())
+      .then(news => {
+        const contentElement = document.getElementById('content');
+        contentElement.innerHTML = `
+          <divstyle="bold"><h1 >${news.title}</h1></div>
+          <hr>
+          <br>
+          <div>${news.content_html}</div>
+        `;
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
+   <!-- bot  -->
+   <div class="bg-gray-100">
+    <button class="toggle-chat" onclick="toggleChat()"><i class="fas fa-comments"></i></button>
+    <div class="bg-white rounded-lg shadow-lg p-6 chat-container" id="chatContainer">
+      <div class="flex justify-between items-center mb-4">
+        <div class="text-blue font-semibold">Tư vấn viên EPU</div>
+        <button class="fullscreen-button" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <!-- Hiển thị tin nhắn trong này -->
+      </div>
+      <div class="border-t pt-4 mt-4">
+        <div class="flex items-center">
+          <button class="clear-button" onclick="clearChat()"><i class="fas fa-broom"></i></button>
+          <form id="chatForm" onsubmit="sendMessage(); return false;">
+            <input type="text" id="user-message" name="user_message" placeholder="Mời bạn đặt câu hỏi"
+              class="chat-input" onkeypress="handleKeyPress(event)">
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <script
+        src="https://mindmaid.ai/embed.js"
+        data-chat-service="Salebot"
+        data-bot-id="782617d0-1617-4641-902e-ed85bac869d5"
+        data-chat-width="450px"
+        data-chat-height="600px"
+        data-bubble-color="#3071FF"
+        ></script> -->
+  <script src="./views/js/main.js"></script>
+</body>
+</html>

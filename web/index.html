@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+  <link rel="stylesheet" href="./views/css/style.css" type="text/css">
+  <link rel="stylesheet" href="./views/css/global.css" type="text/css">
+
+  <!-- Style for chat -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha384-SmlepQa67QL8gbThNBE9TLj7+ffzAN4S5trjeaM1LWOltV2P+xjEzbFOJ8moh8L" crossorigin="anonymous">
+
+  </link>
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="A new Flutter project.">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>Notebook EPU</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    var serviceWorkerVersion = null;
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="flutter.js" defer></script>
+  <script src="./views/js/main.js"></script>
+  <script src="./views/js/index.js"></script>
+  <!-- Add this script tag to include the Elasticsearch JavaScript client -->
+  <script src="https://cdn.jsdelivr.net/npm/@elastic/elasticsearch@7.0.0"></script>
+
+
+
+</head>
+
+<body>
+  <!-- Nav Menu-->
+  <nav>
+    <div class="wrapper">
+      <div class="logo"><a href="http://127.0.0.1:8080/">NotebookEPU</a></div>
+      <input type="radio" name="slider" id="menu-btn">
+      <input type="radio" name="slider" id="close-btn">
+      <ul class="nav-links">
+        <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+        <li><a href="http://127.0.0.1:8080/">Home</a></li>
+        <li><a href="http://127.0.0.1:8080/">About</a></li>
+        <li>
+          <a href="#" class="desktop-item">Quản lý sinh
+            viên</a>
+          <input type="checkbox" id="showDrop">
+          <label for="showDrop" class="mobile-item">Quản lý sinh
+            viên</label>
+          <ul class="drop-menu">
+            <li><a href="https://epu.edu.vn/" target="_blank">EPU
+                EDU</a></li>
+            <li><a href="https://s.net.vn/h8Ni" target="_blank">Quản
+                lý sinh
+                viên</a></li>
+            <li><a href="https://epu.edu.vn/thong-bao/thong-bao-2138-1.html" target="_blank">Thông
+                báo</a></li>
+            <li><a href="https://thanhtoanhocphi.epu.edu.vn/" target="_blank">Thanh
+                toán</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="http://127.0.0.1:8080/" class="desktop-item">EPU
+            Menu</a>
+          <input type="checkbox" id="showMega">
+          <label for="showMega" class="mobile-item">EPU Menu</label>
+          <div class="mega-box">
+            <div class="content">
+              <div class="row">
+                <header>Tuyển sinh</header>
+                <ul class="mega-links">
+                  <li><a href="https://epu.edu.vn/trang/tien-si-2219.html" target="_blank">Tiến
+                      sĩ</a></li>
+                  <li><a href="https://epu.edu.vn/trang/thac-si-2225.html" target="_blank">Thạc
+                      sĩ</a></li>
+                  <li><a href="https://epu.edu.vn/trang/dai-hoc-2222.html" target="_blank">Đại
+                      học</a></li>
+                  <li><a href="#">Đào tạo hợp tác quốc
+                      tế</a></li>
+                  <li><a href="https://ctc.epu.edu.vn/" target="_blank">Đào
+                      tạo thường
+                      xuyên</a></li>
+                  <li><a href="https://epu.edu.vn/trang/van-bang-2-2305.html" target="_blank">Văn
+                      bằng 2</a></li>
+                  <li><a href="https://epu.edu.vn/trang/lien-thong-2306.html" target="_blank">Liên
+                      thông</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header>Đào tạo</header>
+                <ul class="mega-links">
+                  <li><a href="https://epu.edu.vn/trang/tien-si-2219.html" target="_blank">Tiến
+                      sĩ</a></li>
+                  <li><a href="https://epu.edu.vn/trang/thac-si-2225.html" target="_blank">Thạc
+                      sĩ</a></li>
+                  <li><a href="https://epu.edu.vn/trang/dai-hoc-2222.html" target="_blank">Đại
+                      học</a></li>
+                  <li><a href="https://ctc.epu.edu.vn/" target="_blank">Đào
+                      tạo thường
+                      xuyên</a></li>
+                  <li><a href="https://epu.edu.vn/trang/van-bang-2-2305.html" target="_blank">Văn
+                      bằng 2</a></li>
+                  <li><a href="https://epu.edu.vn/trang/lien-thong-2306.html" target="_blank">Liên
+                      thông</a></li>
+                </ul>
+              </div>
+              <div class="row">
+                <header>Các khoa</header>
+                <ul class="mega-links">
+                  <li><a href="https://ee.epu.edu.vn/" target="_blank">Khoa
+                      Kỹ
+                      thuật
+                      điện</a></li>
+                  <li><a href="https://fca.epu.edu.vn/" target="_blank">Khoa
+                      Điều khiển và
+                      Tự động hóa</a></li>
+                  <li><a href="https://iem.epu.edu.vn/" target="_blank">Khoa
+                      Quản lý công
+                      nghiệp và Năng
+                      lượng</a></li>
+                  <li><a href="https://mpe.epu.edu.vn/" target="_blank">Khoa
+                      Cơ khí và Động
+                      lực</a></li>
+                  <li><a href="https://et.epu.edu.vn/" target="_blank">Khoa
+                      Công nghệ năng
+                      lượng</a></li>
+                  <li><a href="https://cntt.epu.edu.vn/" target="_blank">Khoa
+                      Công nghệ
+                      thông tin</a></li>
+                  <li><a href="https://fet.epu.edu.vn/" target="_blank">Khoa
+                      Điện tử viễn
+                      thông</a></li>
+                  <li><a href="https://fem.epu.edu.vn/" target="_blank">Khoa
+                      Kinh tế và Quản
+                      lý</a></li>
+                  <li><a href="https://ce.epu.edu.vn/" target="_blank">Khoa
+                      Xây
+                      dựng</a></li>
+                  <li><a href="https://ffl.epu.edu.vn/" target="_blank">Khoa
+                      Ngoại
+                      ngữ</a></li>
+                  <li><a href="https://ns.epu.edu.vn/" target="_blank">Khoa
+                      Khoa học tự
+                      nhiên</a></li>
+                  <li><a href="https://dps.epu.edu.vn/" target="_blank">Bộ
+                      môn
+                      Khoa học
+                      chính trị</a></li>
+                  <li><a href="https://pends.epu.edu.vn/" target="_blank">Bộ
+                      môn Giáo dục
+                      thể chất và Quốc phòng an
+                      ninh</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="http://127.0.0.1:8080/">Text</a></li>
+      </ul>
+      <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+    </div>
+  </nav>
+
+  <!-- Search -->
+  <!-- <div>
+    <div id="searchContainer">
+      <input type="text" id="searchInput" placeholder="Search...">
+      <button onclick="search()">Search</button>
+      <div id="searchResults"></div>
+    </div>
+
+    <script>
+      const client = new elastic.Client({
+        node: 'http://localhost:9200',
+      });
+
+      function search() {
+        const searchTerm = document.getElementById('searchInput').value;
+
+        // Perform a simple query
+        client.search({
+          index: 'your_index_name',
+          body: {
+            query: {
+              match: {
+                your_field_name: searchTerm,
+              },
+            },
+          },
+        }).then(response => {
+          // Handle the search results
+          const hits = response.body.hits.hits;
+          console.log(hits);
+        }).catch(error => {
+          console.error('Error:', error);
+        });
+      }
+    </script>
+
+  </div> -->
+
+  <!-- Thông báo -->
+  <div>
+    <!-- TIn tuc -->
+    <div id="news-section">
+      <!-- Nội dung của phần thông báo -->
+      <h1>Thông báo</h1>
+      <div id="news-list"></div>
+      <button id="load-more-button">Xem thêm</button>
+    </div>
+
+    <script>
+      const newsList = document.getElementById('news-list');
+      const loadMoreButton = document.getElementById('load-more-button');
+      let page = 1;  // Track the current page
+
+      // Function to fetch news data
+      const fetchNews = async () => {
+        try {
+          const response = await fetch(`http://localhost:4090/api/thongbaoepu?page=${page}`);
+          const data = await response.json();
+
+          // Append each news item to the newsList
+          data.forEach(news => {
+            const newsItem = document.createElement('div');
+            newsItem.className = 'news-item';
+            newsItem.innerHTML = `
+          <img src="${news.top_img}" alt="${news.title}">
+          <div class="news-content">
+            <h2>${news.title}</h2>
+            <button class="read-more-button" data-news-id="${news.id}">Đọc thêm</button>
+          </div>
+        `;
+            newsList.appendChild(newsItem);
+          });
+
+          // If there are more pages, show the "Xem thêm" button
+          if (data.length > 0) {
+            loadMoreButton.style.display = 'block';
+          } else {
+            loadMoreButton.style.display = 'none';
+          }
+
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+
+      // Function to load more news when the button is clicked
+      loadMoreButton.addEventListener('click', () => {
+        page += 1;
+        fetchNews();
+      });
+
+      // Function to handle "Đọc thêm" button clicks
+
+      // Function to handle "Đọc thêm" button clicks
+      newsList.addEventListener('click', (event) => {
+        if (event.target.classList.contains('read-more-button')) {
+          const newsId = event.target.dataset.newsId;
+          // Chuyển hướng đến trang chi tiết với tham số id
+          window.location.href = `chitiet.html?id=${newsId}`;
+        }
+      });
+      // Initial fetch when the page loads
+      fetchNews();
+    </script>
+  </div>
+
+
+
+  <!-- bot  -->
+<div>
+    <div class="bg-gray-100">
+      <button class="toggle-chat" onclick="toggleChat()"><i class="fas fa-comments"></i></button>
+      <div class="bg-white rounded-lg shadow-lg p-6 chat-container" id="chatContainer">
+        <div class="flex justify-between items-center mb-4">
+          <div class="text-blue font-semibold">Tư vấn viên EPU</div>
+          <div class="flex items-center">
+            <button class="zoom-button" onclick="toggleZoom()"><i class="fas fa-search-plus"></i></button>
+            <button class="fullscreen-button" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+          <!-- Hiển thị tin nhắn trong này -->
+          <div class="chat-messages-inner">
+            <!-- Content of the chat messages -->
+          </div>
+        </div>
+        <div class="border-t pt-4 mt-4">
+          <div class="flex items-center justify-between">
+            <!-- Nút Xóa Chat (clear) ở bên trái -->
+            <button class="clear-button" onclick="clearChat()"><i class="fas fa-broom"></i></button>
+            <!-- Form Chat trải dài -->
+            <form id="chatForm" onsubmit="sendMessage(); return false;" class="flex-grow">
+              <input type="text" id="user-message" name="user_message" placeholder="Mời bạn đặt câu hỏi"
+                class="chat-input" onkeypress="handleKeyPress(event)">
+              <!-- Sử dụng icon gửi màu xanh dương từ FontAwesome -->
+              <button type="submit" id="sendButton" class="send-button">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./views/js/main.js"></script>
+  </div>
+</body>
+
+</html>
